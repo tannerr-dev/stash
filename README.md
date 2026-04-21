@@ -1,11 +1,11 @@
 # Stash
 
-A simple, elegant CLI note-taking tool built with Go and the [Charm](https://charm.sh) framework.
+A simple CLI note-taking tool built with Go and the [Charm](https://charm.sh) framework.
 
 ![Go Version](https://img.shields.io/badge/go-%3E%3D1.18-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Stash lets you quickly save notes from your terminal. Whether you want to jot down a quick thought, pipe content from another command, or use the interactive editor, Stash makes it effortless to capture and organize your notes.
+Stash lets you quickly save notes from your terminal. Whether you want to jot down a quick thought, pipe content from another command, or use the interactive editor, Stash makes it effortless to capture your thoughts.
 
 ## Features
 
@@ -26,7 +26,7 @@ Stash lets you quickly save notes from your terminal. Whether you want to jot do
 ### Install with `go install`
 
 ```bash
-go install github.com/yourusername/stash@latest
+go install github.com/tannerr-dev/stash@latest
 ```
 
 Make sure `~/go/bin` is in your PATH:
