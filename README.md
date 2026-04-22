@@ -145,14 +145,14 @@ If a file with the same name exists, Stash appends a number:
 
 When using arguments or piped input, Stash automatically generates a title from the first line:
 
-- Takes the first 24 characters
+- Takes the first 32 characters
 - Appends `...` if truncated
 - Sanitizes for filesystem safety
 
 **Example:**
 ```
-"This is a very long note that exceeds twenty-four characters"
-→ "this-is-a-very-long-note-that..."
+"This is a very long note that exceeds thirty-two characters now"
+→ "this-is-a-very-long-note-that-exceeds-thirt..."
 ```
 
 ## Examples

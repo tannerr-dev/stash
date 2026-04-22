@@ -32,7 +32,7 @@ func SanitizeTitle(title string) string {
 }
 
 // GenerateAutoTitle generates an auto-title from the note content
-// Returns first 24 characters + "..." if longer than 24 chars
+// Returns first 32 characters + "..." if longer than 32 chars
 func GenerateAutoTitle(content string) string {
 	// Get the first line
 	lines := strings.Split(content, "\n")
@@ -45,9 +45,9 @@ func GenerateAutoTitle(content string) string {
 		return "untitled"
 	}
 
-	// Truncate to 24 characters
-	if len(firstLine) > 24 {
-		return firstLine[:24] + "..."
+	// Truncate to 32 characters
+	if len(firstLine) > 32 {
+		return firstLine[:32] + "..."
 	}
 
 	return firstLine
