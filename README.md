@@ -73,10 +73,11 @@ stash
 ```
 
 **Controls:**
-- `Ctrl+S` - Save and enter title
+- `Enter` or `Ctrl+S` - Save immediately with auto-generated title
+- `Ctrl+R` - Customize title before saving (title editor opens with auto-generated title pre-filled)
 - `Ctrl+C` - Quit
 
-The editor will prompt for a title with an auto-suggestion based on your note's first line.
+The auto-generated title is based on your note's first 32 characters.
 
 ### 2. Command Arguments
 
@@ -201,13 +202,18 @@ Get-Clipboard | stash
 When running `stash` without arguments:
 
 1. **Note Input**: Full-screen textarea for typing your note
-2. **Title Prompt**: Auto-suggested title based on first line
-3. **Confirmation**: Note saved, path displayed
+2. **Quick Save**: Press `Enter` or `Ctrl+S` to save immediately with auto-generated title
+3. **Customize Title** (Optional): Press `Ctrl+R` to edit the title before saving
+4. **Confirmation**: Note saved, path displayed
 
 **Navigation:**
 - Standard text editing with cursor keys
 - Paste with your terminal's paste command (Ctrl+Shift+V or Cmd+V)
 - Vim-style keybindings supported
+
+**Workflow:**
+- Type your note → Press `Enter` → Saved with auto-generated title
+- Type your note → Press `Ctrl+R` → Edit title → Press `Enter` → Saved with custom title
 
 ## Error Handling
 

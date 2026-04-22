@@ -105,8 +105,8 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			case tea.KeyCtrlC:
 				return m, tea.Quit
 
-			case tea.KeyCtrlS:
-				// Save note and move to title input
+			case tea.KeyEnter, tea.KeyCtrlS:
+				// Save note immediately with auto-generated title
 				m.noteContent = m.textarea.Value()
 				if strings.TrimSpace(m.noteContent) == "" {
 					m.err = fmt.Errorf("note cannot be empty")
@@ -114,7 +114,29 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					return m, nil
 				}
 
-				// Generate auto-title suggestion
+				// Generate auto-title and save immediately
+				m.title = storage.GenerateAutoTitle(m.noteContent)
+				path, err := storage.SaveNote(m.targetDir, m.noteContent, m.title)
+				if err != nil {
+					m.err = err
+					m.state = StateError
+					return m, nil
+				}
+
+				m.savedPath = path
+				m.state = StateDone
+				return m, tea.Quit
+
+			case tea.KeyCtrlR:
+				// Open title editor for renaming
+				m.noteContent = m.textarea.Value()
+				if strings.TrimSpace(m.noteContent) == "" {
+					m.err = fmt.Errorf("note cannot be empty")
+					m.state = StateError
+					return m, nil
+				}
+
+				// Generate auto-title and pre-fill the input
 				autoTitle := storage.GenerateAutoTitle(m.noteContent)
 				m.titleInput.SetValue(autoTitle)
 				m.titleInput.CursorEnd()
@@ -201,7 +223,7 @@ func (m Model) noteInputView() string {
 	b.WriteString("\n\n")
 	b.WriteString(m.textarea.View())
 	b.WriteString("\n\n")
-	b.WriteString(helpStyle.Render("ctrl+s: save  •  ctrl+c: quit"))
+	b.WriteString(helpStyle.Render("enter/ctrl+s: save  •  ctrl+r: rename  •  ctrl+c: quit"))
 
 	return b.String()
 }
@@ -209,11 +231,11 @@ func (m Model) noteInputView() string {
 func (m Model) titleInputView() string {
 	var b strings.Builder
 
-	b.WriteString(titleStyle.Render("Enter Title"))
+	b.WriteString(titleStyle.Render("Rename Title"))
 	b.WriteString("\n\n")
 	b.WriteString(m.titleInput.View())
 	b.WriteString("\n\n")
-	b.WriteString(helpStyle.Render("enter: save  •  esc: back  •  ctrl+c: quit"))
+	b.WriteString(helpStyle.Render("enter: save with this title  •  esc: back  •  ctrl+c: quit"))
 
 	return b.String()
 }
