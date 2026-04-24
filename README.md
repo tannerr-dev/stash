@@ -5,7 +5,7 @@
 
 Stash lets you quickly save notes from your terminal. 
 
-Done't lose your focus trying to save an idea.
+Don't lose your focus trying to save an idea.
 
 Command:
 ```
