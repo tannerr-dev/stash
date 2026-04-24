@@ -3,7 +3,7 @@
 ![Go Version](https://img.shields.io/badge/go-%3E%3D1.18-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Stash lets you quickly save notes from your terminal. Whether you want to jot down a quick thought, pipe content from another command, or use the interactive editor, Stash saves it as a date stamped and titled markdown file in a directory you specify.
+Stash lets you quickly save notes from your terminal. Whether you want to use the interactive editor, paste from your clipboard, pipe content from another command, or pass a string, Stash saves your text as a date stamped and titled markdown file in a directory you specify once at set up.
 
 Command:
 ```
