@@ -3,11 +3,15 @@
 ![Go Version](https://img.shields.io/badge/go-%3E%3D1.18-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Stash lets you quickly save notes from your terminal. Whether you want to jot down a quick thought, pipe content from another command, or use the interactive editor, Stash makes it effortless to capture your thoughts.
+Stash lets you quickly save notes from your terminal. Whether you want to jot down a quick thought, pipe content from another command, or use the interactive editor, Stash saves it as a date stamped and titled markdown file in a directory you specify.
+
 Command:
 ```
 stash
 ```
+Choose what folder to send stashed notes to::
+`home/<user>/vault/stash-notes`
+
 <img width="615" height="528" alt="1_tmp_screenshot" src="https://github.com/user-attachments/assets/42a4abe9-6bc9-4dda-a738-974f8afb44f9" />
 
 ## Features
