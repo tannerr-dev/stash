@@ -1,7 +1,6 @@
 # Stash
 
 ![Go Version](https://img.shields.io/badge/go-%3E%3D1.18-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 Stash lets you quickly save notes from your terminal. 
 
