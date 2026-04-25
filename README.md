@@ -205,6 +205,8 @@ xclip -o | stash
 # Windows (with PowerShell)
 Get-Clipboard | stash
 ```
+Nice lil alias for your .bashrc:
+`alias stashh="xclip -o | stash"`
 
 ## Interactive Mode Details
 
@@ -244,34 +246,6 @@ $ stash ""
 Error: note cannot be empty
 ```
 
-## Tips & Tricks
-
-### Create Aliases
-
-```bash
-# Quick daily note
-alias journal='stash "$(date +%Y-%m-%d)"'
-
-# Note with timestamp
-alias now='stash "$(date "+%Y-%m-%d %H:%M")"'
-```
-
-### Integrate with Git
-
-```bash
-# Commit notes automatically
-cd ~/notes && git add . && git commit -m "Update notes $(date)"
-```
-
-### Search Notes
-
-```bash
-# Find all notes mentioning "meeting"
-grep -r "meeting" ~/notes/
-
-# List today's notes
-ls ~/notes/$(date +%Y-%m-%d)*
-```
 
 ## Development
 
@@ -306,9 +280,6 @@ go test ./...
 - [Bubbles](https://github.com/charmbracelet/bubbles) - UI components
 - [Lipgloss](https://github.com/charmbracelet/lipgloss) - Styling
 
-## License
-
-MIT License - see LICENSE file for details.
 
 ## Contributing
 
@@ -316,4 +287,4 @@ Contributions welcome! Please feel free to submit a Pull Request.
 
 ## Acknowledgments
 
-Built with ❤️ using the [Charm](https://charm.sh) ecosystem.
+Built with vibes❤️ using the [Charm](https://charm.sh) ecosystem.
