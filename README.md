@@ -166,30 +166,10 @@ When using arguments or piped input, Stash automatically generates a title from 
 
 ## Examples
 
-### Daily Journal Entry
-
-```bash
-stash "$(date '+%Y-%m-%d') Journal Entry
-
-Today I learned about Go interfaces..."
-```
-
 ### Save Code Snippet
 
 ```bash
 grep -A 5 "func main" main.go | stash
-```
-
-### Meeting Notes
-
-```bash
-stash "Team Meeting - $(date)
-
-Attendees: Alice, Bob, Charlie
-
-Action items:
-- [ ] Review PR #123
-- [ ] Update documentation"
 ```
 
 ### From Clipboard
