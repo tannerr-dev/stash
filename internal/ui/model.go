@@ -105,7 +105,7 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			case tea.KeyCtrlC:
 				return m, tea.Quit
 
-			case tea.KeyEnter, tea.KeyCtrlS:
+			case tea.KeyCtrlS:
 				// Save note immediately with auto-generated title
 				m.noteContent = m.textarea.Value()
 				if strings.TrimSpace(m.noteContent) == "" {
@@ -223,7 +223,7 @@ func (m Model) noteInputView() string {
 	b.WriteString("\n\n")
 	b.WriteString(m.textarea.View())
 	b.WriteString("\n\n")
-	b.WriteString(helpStyle.Render("enter/ctrl+s: save  •  ctrl+r: rename  •  ctrl+c: quit"))
+	b.WriteString(helpStyle.Render("ctrl+s: save  •  ctrl+r: rename  •  ctrl+c: quit"))
 
 	return b.String()
 }

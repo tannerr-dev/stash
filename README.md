@@ -81,7 +81,7 @@ stash
 ```
 
 **Controls:**
-- `Enter` or `Ctrl+S` - Save immediately with auto-generated title
+- `Ctrl+S` - Save immediately with auto-generated title
 - `Ctrl+R` - Customize title before saving (title editor opens with auto-generated title pre-filled)
 - `Ctrl+C` - Quit
 
@@ -192,7 +192,7 @@ Nice lil alias for your .bashrc:
 When running `stash` without arguments:
 
 1. **Note Input**: Full-screen textarea for typing your note
-2. **Quick Save**: Press `Enter` or `Ctrl+S` to save immediately with auto-generated title
+2. **Quick Save**: Press `Ctrl+S` to save immediately with auto-generated title
 3. **Customize Title** (Optional): Press `Ctrl+R` to edit the title before saving
 4. **Confirmation**: Note saved, path displayed
 
@@ -202,8 +202,8 @@ When running `stash` without arguments:
 - Vim-style keybindings supported
 
 **Workflow:**
-- Type your note → Press `Enter` → Saved with auto-generated title
-- Type your note → Press `Ctrl+R` → Edit title → Press `Enter` → Saved with custom title
+- Type your note → Press `Ctrl+S` → Saved with auto-generated title
+- Type your note → Press `Ctrl+R` → Edit title → Press `Ctrl+S` → Saved with custom title
 
 ## Error Handling
 
